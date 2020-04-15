@@ -15,6 +15,7 @@
 		9FE313442446D374008E60B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FE313432446D374008E60B4 /* Assets.xcassets */; };
 		9FE313472446D374008E60B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FE313452446D374008E60B4 /* LaunchScreen.storyboard */; };
 		9FE313522446D375008E60B4 /* goalpost_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE313512446D375008E60B4 /* goalpost_appTests.swift */; };
+		9FE313612446F4D7008E60B4 /* GoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE313602446F4D7008E60B4 /* GoalTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		9FE3134D2446D375008E60B4 /* goalpost-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "goalpost-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FE313512446D375008E60B4 /* goalpost_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goalpost_appTests.swift; sourceTree = "<group>"; };
 		9FE313532446D375008E60B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FE313602446F4D7008E60B4 /* GoalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 		9FE3135D2446D405008E60B4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9FE313602446F4D7008E60B4 /* GoalTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				9FE3133C2446D374008E60B4 /* GoalsViewController.swift in Sources */,
 				9FE313382446D374008E60B4 /* AppDelegate.swift in Sources */,
 				9FE313422446D374008E60B4 /* goalpost_app.xcdatamodeld in Sources */,
+				9FE313612446F4D7008E60B4 /* GoalTableViewCell.swift in Sources */,
 				9FE3133A2446D374008E60B4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
