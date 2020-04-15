@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		9FE313382446D374008E60B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE313372446D374008E60B4 /* AppDelegate.swift */; };
 		9FE3133A2446D374008E60B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE313392446D374008E60B4 /* SceneDelegate.swift */; };
-		9FE3133C2446D374008E60B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE3133B2446D374008E60B4 /* ViewController.swift */; };
+		9FE3133C2446D374008E60B4 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE3133B2446D374008E60B4 /* GoalsViewController.swift */; };
 		9FE3133F2446D374008E60B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FE3133D2446D374008E60B4 /* Main.storyboard */; };
 		9FE313422446D374008E60B4 /* goalpost_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9FE313402446D374008E60B4 /* goalpost_app.xcdatamodeld */; };
 		9FE313442446D374008E60B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FE313432446D374008E60B4 /* Assets.xcassets */; };
@@ -31,7 +31,7 @@
 		9FE313342446D374008E60B4 /* goalpost-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "goalpost-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FE313372446D374008E60B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FE313392446D374008E60B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9FE3133B2446D374008E60B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9FE3133B2446D374008E60B4 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
 		9FE3133E2446D374008E60B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FE313412446D374008E60B4 /* goalpost_app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = goalpost_app.xcdatamodel; sourceTree = "<group>"; };
 		9FE313432446D374008E60B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 		9FE3135C2446D3CD008E60B4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9FE3133B2446D374008E60B4 /* ViewController.swift */,
+				9FE3133B2446D374008E60B4 /* GoalsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -235,7 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FE3133C2446D374008E60B4 /* ViewController.swift in Sources */,
+				9FE3133C2446D374008E60B4 /* GoalsViewController.swift in Sources */,
 				9FE313382446D374008E60B4 /* AppDelegate.swift in Sources */,
 				9FE313422446D374008E60B4 /* goalpost_app.xcdatamodeld in Sources */,
 				9FE3133A2446D374008E60B4 /* SceneDelegate.swift in Sources */,
