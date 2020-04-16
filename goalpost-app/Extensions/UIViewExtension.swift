@@ -25,7 +25,7 @@ extension UIView {
         
         // deltaY doesn't calculate properly on iPhones where Safe Area.bottom and it's Superview.bottom is not the same, like iPhones X and above
         
-        let deltaY = endingFrame.origin.y - startingFrame.origin.y + 34 // +34 is iPhone X and above compensation, but have to find better solution than this
+        let deltaY = endingFrame.origin.y - startingFrame.origin.y // +34 is iPhone X and above compensation, but have to find better solution than this
                 
         UIView.animateKeyframes(withDuration: duration, delay: 0.0, options: KeyframeAnimationOptions(rawValue: curve), animations: {
             self.frame.origin.y += deltaY
