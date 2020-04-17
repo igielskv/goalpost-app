@@ -45,7 +45,9 @@ class CreateGoalViewController: UIViewController, UITextViewDelegate {
             let finishGoalViewController: FinishGoalViewController
             finishGoalViewController = storyboard?.instantiateViewController(withIdentifier: "FinishGoalViewControllerID") as! FinishGoalViewController
             finishGoalViewController.initData(description: goalTextView.text!, type: goalType)
-            present(finishGoalViewController, animated: true, completion: nil)
+            
+//            present(finishGoalViewController, animated: true, completion: nil)
+            presentingViewController?.presentSecondaryDetail(finishGoalViewController)
         }
     }
     
