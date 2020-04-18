@@ -15,6 +15,9 @@ class GoalsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet var undoView: UIView!
+    @IBOutlet var undoLabel: UILabel!
+    
     var goals: [Goal] = []
     
     override func viewDidLoad() {
@@ -43,6 +46,12 @@ class GoalsViewController: UIViewController {
             }
         }
     }
+    
+    func undoShow(action: String) {
+        undoLabel.text = action
+        undoView.isHidden = false
+    }
+    
     @IBAction func addGoalButtonTapped(_ sender: Any) {
         
         /*
@@ -55,7 +64,16 @@ class GoalsViewController: UIViewController {
         
         let createGoalViewController: CreateGoalViewController
         createGoalViewController = storyboard?.instantiateViewController(withIdentifier: "CreateGoalViewControllerID") as! CreateGoalViewController
-        present(createGoalViewController, animated: true, completion: nil)
+        
+//        present(createGoalViewController, animated: true, completion: nil)
+        presentDetail(createGoalViewController)
+    }
+    
+    @IBAction func undoButtonTapped(_ sender: Any) {
+        undoLastAction()
+        fetchCoreDataObjects()
+        tableView.reloadData()
+        undoView.isHidden = true
     }
     
 }
@@ -88,6 +106,7 @@ extension GoalsViewController: UITableViewDelegate, UITableViewDataSource {
             self.removeGoal(atIndexPath: indexPath)
             self.fetchCoreDataObjects()
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            self.undoShow(action: "Goal Removed")
         }
         
         let addProgressAction = UITableViewRowAction(style: .normal, title: "ADD 1") { (rowAction, indexPath) in
@@ -126,6 +145,7 @@ extension GoalsViewController {
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
         
         managedContext.delete(goals[indexPath.row])
+        managedContext.undoManager = UndoManager()
         
         do {
             try managedContext.save()
@@ -148,6 +168,17 @@ extension GoalsViewController {
             debugPrint("Could not fetch: \(error.localizedDescription)")
             completion(false)
         }
+    }
+    
+    func undoLastAction() {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
         
+        managedContext.undo()
+        
+        do {
+            try managedContext.save()
+        } catch {
+            debugPrint("Could not undo: \(error.localizedDescription)")
+        }
     }
 }

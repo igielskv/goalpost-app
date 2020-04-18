@@ -33,14 +33,21 @@ class FinishGoalViewController: UIViewController {
         if pointsTextField.text != "" {
             self.save { (complete) in
                 if complete {
-                    dismiss(animated: true, completion: nil)
+                    /*
+                     let goalsViewController = storyboard?.instantiateViewController(withIdentifier: "GoalsViewControllerID") as! GoalsViewController
+                     goalsViewController.undoShow(action: "Goal Created")
+                     */
+                    
+//                    dismiss(animated: true, completion: nil)
+                    dismissDetail()
                 }
             }
         }
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+//        dismiss(animated: true, completion: nil)
+        dismissDetail()
     }
     
     func save(completion: (_ finished: Bool) -> () ) {
@@ -51,6 +58,8 @@ class FinishGoalViewController: UIViewController {
         goal.goalType = goalType.rawValue
         goal.goalCompletionValue = Int32(pointsTextField.text!)!
         goal.goalProgress = Int32(0)
+        
+        managedContext.undoManager = UndoManager()
         
         do{
             try managedContext.save()

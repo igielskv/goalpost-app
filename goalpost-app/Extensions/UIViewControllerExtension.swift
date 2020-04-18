@@ -16,6 +16,8 @@ extension UIViewController {
         transition.subtype = CATransitionSubtype.fromRight
         self.view.window?.layer.add(transition, forKey: kCATransition)
         
+        viewControllerToPresent.modalPresentationStyle = .fullScreen
+        
         present(viewControllerToPresent, animated: false, completion: nil)
     }
     
@@ -24,6 +26,8 @@ extension UIViewController {
         transition.duration = 0.3
         transition.type = CATransitionType.push
         transition.subtype = CATransitionSubtype.fromRight
+        
+        viewControllerToPresent.modalPresentationStyle = .fullScreen
         
         guard let presentedViewController = presentedViewController else { return }
         

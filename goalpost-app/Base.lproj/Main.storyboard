@@ -169,15 +169,47 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dq1-eP-fbq">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phy-R5-kyR">
+                                        <rect key="frame" x="16" y="15" width="289" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dmj-y9-3H9">
+                                        <rect key="frame" x="313" y="10" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="UNDO"/>
+                                        <connections>
+                                            <action selector="undoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ryj-V2-4Lx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Dmj-y9-3H9" firstAttribute="leading" secondItem="Phy-R5-kyR" secondAttribute="trailing" constant="8" symbolic="YES" id="1GF-KD-qjN"/>
+                                    <constraint firstItem="Phy-R5-kyR" firstAttribute="leading" secondItem="dq1-eP-fbq" secondAttribute="leading" constant="16" id="NKH-YU-Zjn"/>
+                                    <constraint firstItem="Phy-R5-kyR" firstAttribute="centerY" secondItem="dq1-eP-fbq" secondAttribute="centerY" id="Rdq-zr-YZ0"/>
+                                    <constraint firstItem="Dmj-y9-3H9" firstAttribute="centerY" secondItem="dq1-eP-fbq" secondAttribute="centerY" id="eyS-az-wum"/>
+                                    <constraint firstAttribute="height" constant="50" id="fd7-uA-hU1"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dmj-y9-3H9" secondAttribute="trailing" constant="16" id="v4i-Yg-Ayh"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Kcf-GJ-N2C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0qR-ZZ-JLg"/>
                             <constraint firstItem="vfG-Dm-Bxk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Dq-BQ-fVi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dq1-eP-fbq" secondAttribute="bottom" id="4ri-0d-mzA"/>
                             <constraint firstItem="bhu-o4-A61" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CKi-wh-7db"/>
                             <constraint firstItem="Kcf-GJ-N2C" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Jti-tg-lEs"/>
                             <constraint firstItem="Kcf-GJ-N2C" firstAttribute="top" secondItem="bhu-o4-A61" secondAttribute="bottom" id="RHj-3q-qdt"/>
                             <constraint firstItem="bhu-o4-A61" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hDI-fi-qI7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dq1-eP-fbq" secondAttribute="trailing" id="jTT-iP-4Ns"/>
+                            <constraint firstItem="dq1-eP-fbq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nfB-iO-Ef0"/>
                             <constraint firstItem="bhu-o4-A61" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rEQ-9y-EFE"/>
                             <constraint firstItem="Kcf-GJ-N2C" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="saJ-i7-ETS"/>
                             <constraint firstItem="vfG-Dm-Bxk" firstAttribute="top" secondItem="bhu-o4-A61" secondAttribute="bottom" constant="75" id="x5t-1d-d7O"/>
@@ -186,6 +218,8 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="Kcf-GJ-N2C" id="Gem-LH-DK1"/>
+                        <outlet property="undoLabel" destination="Phy-R5-kyR" id="UkP-wi-aBT"/>
+                        <outlet property="undoView" destination="dq1-eP-fbq" id="S0Z-Lk-QSI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

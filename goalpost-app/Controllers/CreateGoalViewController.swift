@@ -58,7 +58,8 @@ class CreateGoalViewController: UIViewController, UITextViewDelegate {
          dismissDetail()
          */
         
-        dismiss(animated: true, completion: nil)
+//        dismiss(animated: true, completion: nil)
+        dismissDetail()
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
